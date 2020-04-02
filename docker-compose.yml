@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  laravel:
+    image: laravel:latest
+    build:
+      context: .
+      args:
+        - "BUILD_ARGUMENT_ENV=dev"
+        - "BUILD_ARGUMENT_DEBUG_ENABLED=false"
+      dockerfile: ./Dockerfile
+    container_name: laravel
+    expose:
+      - "80"
+    ports:
+      - "8080:80"
+
